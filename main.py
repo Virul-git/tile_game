@@ -1,6 +1,8 @@
 import pygame 
 from tileC import Tile
 import my_text
+import characters
+
 
 display_width = 720
 display_height = 440
@@ -33,6 +35,11 @@ def main():
 	total_frames = 0
 
 	gameRunning = True
+################ initalize villans and Hero ############
+
+	villans = characters.Villans(160,160)
+	Hero = characters.Survivor(360,200)
+
 	while True:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
@@ -44,6 +51,8 @@ def main():
 					quit()
 		gameDisplay.fill(black)
 		Tile.draw_tiles(gameDisplay)
+		villans.draw_villans(villans,gameDisplay)
+		Hero.draw_survivor(gameDisplay)
 		my_text.text_display(gameDisplay,"this is to be displayed",50,50)
 		pygame.display.update()				
 		clock.tick(FPS)

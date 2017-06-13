@@ -17,7 +17,7 @@ class character(pygame.Rect):
 		return Tile.get_tile(self.get_number())
 
 
-class Villans(Character):
+class Villans(character):
 	List = []
 
 	def __init__(self,x,y):
@@ -37,7 +37,7 @@ class Survivor(character):
 
 	def draw_survivor(self,gameDisplay):
 		r= self.width/2
-		pygame.draw.Circle(gameDisplay,[80,250,160],(self.x+r,self.y+r),r)
+		pygame.draw.circle(gameDisplay,[80,250,160],(self.x+r,self.y+r),r)
 	
 
 
