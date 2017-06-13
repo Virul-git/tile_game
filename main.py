@@ -2,6 +2,7 @@ import pygame
 from tileC import Tile
 import my_text
 import characters
+import user_input
 
 
 display_width = 720
@@ -41,14 +42,8 @@ def main():
 	Hero = characters.Survivor(360,200)
 
 	while True:
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				pygame.quit()
-				quit()
-			if event.type == pygame.KEYDOWN:
-				if event.key == pygame.K_s:
-					pygame.quit()
-					quit()
+	
+		user_input.get_input(gameDisplay,Hero)
 		gameDisplay.fill(black)
 		Tile.draw_tiles(gameDisplay)
 		villans.draw_villans(villans,gameDisplay)

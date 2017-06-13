@@ -11,7 +11,7 @@ class character(pygame.Rect):
 		pygame.Rect.__init__(self,x,y,character.width,character.height)
 	
 	def get_number(self):
-		return ((self.x/width)+Tile.H)+((self.y/height)+Tile.V)
+		return ((self.x/self.width)+Tile.H)+((self.y/self.height)*Tile.V)
 	
 	def get_tile(self):
 		return Tile.get_tile(self.get_number())
