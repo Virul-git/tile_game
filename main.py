@@ -18,10 +18,6 @@ walls = (1,2,3,4,5,6,7,8,9,10)
 gameDisplay = pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption("Tile Game")
 
-clock = pygame.time.Clock()
-FPS = 24
-total_frames = 0
-
 for y in range(0,display_height,40):
 	for x in range(0,display_width,40):
 		if Tile.total_tiles in walls:
@@ -32,6 +28,10 @@ for y in range(0,display_height,40):
 
 
 def main():
+	clock = pygame.time.Clock()
+	FPS = 24
+	total_frames = 0
+
 	gameRunning = True
 	while True:
 		for event in pygame.event.get():
@@ -46,6 +46,8 @@ def main():
 		Tile.draw_tiles(gameDisplay)
 		my_text.text_display(gameDisplay,"this is to be displayed",50,50)
 		pygame.display.update()				
+		clock.tick(FPS)
+		total_frames +=1
 	
 
 if __name__ == "__main__":
