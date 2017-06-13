@@ -3,6 +3,7 @@ from tileC import Tile
 import my_text
 import characters
 import user_input
+from a_star import *
 
 
 display_width = 720
@@ -42,7 +43,7 @@ def main():
 	Hero = characters.Survivor(360,200)
 
 	while True:
-	
+		a_star(gameDisplay,Hero)
 		user_input.get_input(gameDisplay,Hero)
 		gameDisplay.fill(black)
 		Tile.draw_tiles(gameDisplay)

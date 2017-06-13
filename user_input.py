@@ -17,8 +17,7 @@ def get_input(gameDisplay,Hero):
 			A =Tile.get_tile(Mnum)
 			A.type = 'filled'
 			A.walkable = False
-			if pygame.event.key == pygame.M_1:
-				print "button 1 pressed"
+
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_w:
 				future_tile = Hero.get_number()-Tile.V
