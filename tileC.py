@@ -1,4 +1,5 @@
 import pygame
+import my_text
 
 black = (0,0,0)
 red = (255,0,0)
@@ -34,3 +35,4 @@ class Tile(pygame.Rect):
 		for tile in Tile.List:
 			if not (tile.type == 'empty'):
 				pygame.draw.rect(gameDisplay,blue,tile)
+				my_text.text_display(gameDisplay,tile.number,tile.x,tile.y)
