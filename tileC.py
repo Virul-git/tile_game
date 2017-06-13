@@ -12,6 +12,7 @@ class Tile(pygame.Rect):
 	List = []
 	width, height = 40,40
 	total_tiles = 1
+	H, V = 1,18
 
 	def __init__(self,x,y,Type):
 		self.type = Type
@@ -35,4 +36,4 @@ class Tile(pygame.Rect):
 		for tile in Tile.List:
 			if not (tile.type == 'empty'):
 				pygame.draw.rect(gameDisplay,blue,tile)
-				my_text.text_display(gameDisplay,tile.number,tile.x,tile.y)
+			my_text.text_display(gameDisplay,tile.number,tile.x,tile.y)
