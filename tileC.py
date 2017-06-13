@@ -15,6 +15,10 @@ class Tile(pygame.Rect):
 	H, V = 1,18
 
 	def __init__(self,x,y,Type):
+		
+		self.parent = None
+		self.G, self.H,self.F = 0,0,0
+		
 		self.type = Type
 		self.number = Tile.total_tiles
 		Tile.total_tiles += 1
@@ -36,4 +40,12 @@ class Tile(pygame.Rect):
 		for tile in Tile.List:
 			if not (tile.type == 'empty'):
 				pygame.draw.rect(gameDisplay,blue,tile)
+
+			if tile.G != 0:
+				my_text.text_display(gameDisplay,tile.G,tile.x,tile.y+20,color=red)
+			if tile.H != 0:
+				my_text.text_display(gameDisplay,tile.H,tile.x+20,tile.y,color=blue)
+			if tile.F != 0:
+				my_text.text_display(gameDisplay,tile.F,tile.x+20,tile.y+20,color=green)		
+			
 			my_text.text_display(gameDisplay,tile.number,tile.x,tile.y)

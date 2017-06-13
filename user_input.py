@@ -12,12 +12,13 @@ def get_input(gameDisplay,Hero):
 		if event.type == pygame.QUIT:
 			pygame.quit()
 			quit()
-
+		print event
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			A =Tile.get_tile(Mnum)
 			A.type = 'filled'
 			A.walkable = False
-	
+			if pygame.event.key == pygame.M_1:
+				print "button 1 pressed"
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_w:
 				future_tile = Hero.get_number()-Tile.V
