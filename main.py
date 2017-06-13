@@ -1,5 +1,6 @@
 import pygame 
 from tileC import Tile
+import my_text
 
 display_width = 720
 display_height = 440
@@ -41,7 +42,9 @@ def main():
 				if event.key == pygame.K_s:
 					pygame.quit()
 					quit()
+		gameDisplay.fill(black)
 		Tile.draw_tiles(gameDisplay)
+		my_text.text_display(gameDisplay,"this is to be displayed",50,50)
 		pygame.display.update()				
 	
 
