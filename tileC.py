@@ -39,13 +39,15 @@ class Tile(pygame.Rect):
 	def draw_tiles(gameDisplay):
 		for tile in Tile.List:
 			if not (tile.type == 'empty'):
-				pygame.draw.rect(gameDisplay,blue,tile)
-
+				pygame.draw.rect(gameDisplay,[12,16,120],tile)
+"""
 			if tile.G != 0:
-				my_text.text_display(gameDisplay,tile.G,tile.x,tile.y+20,color=red)
+				my_text.text_display(gameDisplay,tile.G,tile.x,tile.y+20,color=red,size=10)
 			if tile.H != 0:
-				my_text.text_display(gameDisplay,tile.H,tile.x+20,tile.y,color=blue)
+				my_text.text_display(gameDisplay,tile.H,tile.x+20,tile.y,color=blue,size=10)
 			if tile.F != 0:
-				my_text.text_display(gameDisplay,tile.F,tile.x+20,tile.y+20,color=green)		
+				my_text.text_display(gameDisplay,tile.F,tile.x+20,tile.y+20,color=green,size=10)		
 			
-			#my_text.text_display(gameDisplay,tile.number,tile.x,tile.y)
+	#		my_text.text_display(gameDisplay,tile.number,tile.x,tile.y)
+"""
+

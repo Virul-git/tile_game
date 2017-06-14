@@ -15,6 +15,11 @@ def a_star(gameDisplay,Hero):
 	SW=19
 	SE=21
 
+	def blocky(tiles,diagonals,surrounding_node):
+		if surrounding_node.number not in diagonals:
+			tiles.append(surrounding_node)
+		return tiles
+
 	def get_surrounding_tiles(base_node):
 		
 		array = (
@@ -30,12 +35,16 @@ def a_star(gameDisplay,Hero):
 		#print array
 		tiles = []
 
+		onn = base_node.number
+		diagonals = [onn+NE,onn+SW,onn+NW,onn+SE]
+
 		for tile_number in array:
 
 			surrounding_tile = Tile.get_tile(tile_number)
 
 			if (surrounding_tile.walkable and surrounding_tile not in closed_list):
-				tiles.append(surrounding_tile)
+				#tiles.append(surrounding_tile) diagonal movenent
+				tiles = blocky(tiles,diagonals,surrounding_tile)
 
 		return tiles
 
@@ -117,7 +126,7 @@ def a_star(gameDisplay,Hero):
 			F(node)
 
 			half = Tile.width/2
-			pygame.draw.line(gameDisplay,[255,0,0],[node.parent.x+half,node.parent.y+half],[node.x+half,node.y+half])
+		#	pygame.draw.line(gameDisplay,[255,0,0],[node.parent.x+half,node.parent.y+half],[node.x+half,node.y+half])
 
 		loop()
 
