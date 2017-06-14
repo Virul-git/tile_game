@@ -43,9 +43,9 @@ def main():
 	Hero = characters.Survivor(360,200)
 
 	while True:
+		gameDisplay.fill(black)
 		a_star(gameDisplay,Hero)
 		user_input.get_input(gameDisplay,Hero)
-		gameDisplay.fill(black)
 		Tile.draw_tiles(gameDisplay)
 		villans.draw_villans(villans,gameDisplay)
 		Hero.draw_survivor(gameDisplay)

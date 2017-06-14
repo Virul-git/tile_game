@@ -48,4 +48,4 @@ class Tile(pygame.Rect):
 			if tile.F != 0:
 				my_text.text_display(gameDisplay,tile.F,tile.x+20,tile.y+20,color=green)		
 			
-			my_text.text_display(gameDisplay,tile.number,tile.x,tile.y)
+			#my_text.text_display(gameDisplay,tile.number,tile.x,tile.y)

@@ -15,10 +15,17 @@ def get_input(gameDisplay,Hero):
 		print event
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			A =Tile.get_tile(Mnum)
-			A.type = 'filled'
-			A.walkable = False
+			if A.walkable:
+				A.type = 'filled'
+				A.walkable = False
+			else:
+				A.type = 'empty'
+				A.walkable = True
 
 		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_ESCAPE:
+				pygame.quit()
+				quit()
 			if event.key == pygame.K_w:
 				future_tile = Hero.get_number()-Tile.V
 				if Tile.get_tile(future_tile).walkable:
