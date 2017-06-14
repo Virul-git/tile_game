@@ -24,6 +24,7 @@ class Villans(character):
 		character.__init__(self,x,y)
 		Villans.List.append(self)
 
+
 	@staticmethod
 	def draw_villans(self,gameDisplay):
 		for Villan in Villans.List:

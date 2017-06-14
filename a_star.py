@@ -3,7 +3,7 @@ from characters import *
 from tileC import Tile
 
 
-def a_star(gameDisplay,Hero):
+def a_star(gameDisplay,Hero,total_frames,FPS):
 	
 	N=-20
 	S=20
@@ -14,6 +14,11 @@ def a_star(gameDisplay,Hero):
 	NE=-19
 	SW=19
 	SE=21
+
+
+	for tile in Tile.List:
+		tile.parent = None
+		tile.H, tile.G, tile.F = 0,0,0
 
 	def blocky(tiles,diagonals,surrounding_node):
 		if surrounding_node.number not in diagonals:
@@ -41,7 +46,8 @@ def a_star(gameDisplay,Hero):
 		for tile_number in array:
 
 			surrounding_tile = Tile.get_tile(tile_number)
-
+			if tile_number not in range(1, Tile.total_tiles+1):
+				continue
 			if (surrounding_tile.walkable and surrounding_tile not in closed_list):
 				#tiles.append(surrounding_tile) diagonal movenent
 				tiles = blocky(tiles,diagonals,surrounding_tile)
@@ -176,7 +182,11 @@ def a_star(gameDisplay,Hero):
 			pygame.draw.circle(gameDisplay,[10,250,50],[tile.x+half,tile.y+half],half/4)
 			
 
-
+		if len(return_tiles)>1:
+			if total_frames % (FPS/2) == 0:
+				next_tile = return_tiles[-1]
+				villan.x = next_tile.x
+				villan.y = next_tile.y
 
 
 

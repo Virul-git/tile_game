@@ -28,22 +28,26 @@ def get_input(gameDisplay,Hero):
 				quit()
 			if event.key == pygame.K_w:
 				future_tile = Hero.get_number()-Tile.V
-				if Tile.get_tile(future_tile).walkable:
+				if future_tile in range(1,Tile.total_tiles+1):
+					if Tile.get_tile(future_tile).walkable:
 					#print future_tile
-					Hero.y -= Tile.height
+						Hero.y -= Tile.height
 			if event.key == pygame.K_s:
 				future_tile = Hero.get_number()+Tile.V
-				if Tile.get_tile(future_tile).walkable:
-					#print future_tile
-					Hero.y += Tile.height
+				if future_tile in range(1,Tile.total_tiles+1):
+					if Tile.get_tile(future_tile).walkable:
+						#print future_tile
+						Hero.y += Tile.height
 			if event.key == pygame.K_a:
 				future_tile = Hero.get_number()-Tile.H
-				if Tile.get_tile(future_tile).walkable:
-					#print future_tile
-					Hero.x -= Tile.width
+				if future_tile in range(1,Tile.total_tiles+1):
+					if Tile.get_tile(future_tile).walkable:
+						#print future_tile
+						Hero.x -= Tile.width
 			if event.key == pygame.K_d:
 				future_tile = Hero.get_number()+Tile.H
-				if Tile.get_tile(future_tile).walkable:
-					#print future_tile
-					Hero.x += Tile.width
+				if future_tile in range(1,Tile.total_tiles+1):
+					if Tile.get_tile(future_tile).walkable:
+						#print future_tile
+						Hero.x += Tile.width
 				

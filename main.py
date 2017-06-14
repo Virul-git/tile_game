@@ -29,11 +29,11 @@ for y in range(0,display_height,40):
 		else:
 			Tile(x,y,'empty')
 
-
+			
 
 def main():
 	clock = pygame.time.Clock()
-	FPS = 24
+	FPS = 20
 	total_frames = 0
 
 	gameRunning = True
@@ -44,7 +44,7 @@ def main():
 
 	while True:
 		gameDisplay.fill(black)
-		a_star(gameDisplay,Hero)
+		a_star(gameDisplay,Hero,total_frames,FPS)
 		user_input.get_input(gameDisplay,Hero)
 		Tile.draw_tiles(gameDisplay)
 		villans.draw_villans(villans,gameDisplay)
