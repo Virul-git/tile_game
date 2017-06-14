@@ -145,6 +145,26 @@ def a_star(gameDisplay,Hero):
 
 		loop()
 
+		return_tiles = []
+
+		parent = Hero.get_tile()
+
+		while True:
+
+			return_tiles.append(parent)
+
+			parent = parent.parent
+
+			if parent == None:
+				break
+			if parent.number == villan.get_number():
+				break
+
+
+		half = Tile.width/2
+
+		for tile in return_tiles:
+			pygame.draw.circle(gameDisplay,[10,250,50],[tile.x+half,tile.y+half],half/2)
 			
 
 
