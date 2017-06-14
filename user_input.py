@@ -6,7 +6,7 @@ def get_input(gameDisplay,Hero):
 	Mpos = pygame.mouse.get_pos()
 	Mx = Mpos[0]/Tile.width
 	My = Mpos[1]/Tile.height
-	Mnum = (Mx+1)+(My*18)
+	Mnum = (Mx+1)+(My*20)
 	
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:

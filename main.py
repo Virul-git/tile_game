@@ -6,8 +6,8 @@ import user_input
 from a_star import *
 
 
-display_width = 720
-display_height = 440
+display_width = 800
+display_height = 600
 	
 black = (0,0,0)
 red = (255,0,0)

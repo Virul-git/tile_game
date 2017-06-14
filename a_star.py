@@ -5,15 +5,15 @@ from tileC import Tile
 
 def a_star(gameDisplay,Hero):
 	
-	N=-18
-	S=18
+	N=-20
+	S=20
 	E=1
 	W=-1
 
-	NW=-19
-	NE=-17
-	SW=17
-	SE=19
+	NW=-21
+	NE=-19
+	SW=19
+	SE=21
 
 	def get_surrounding_tiles(base_node):
 		
@@ -76,6 +76,19 @@ def a_star(gameDisplay,Hero):
 			if tile.F == min(lft):
 				return tile
 
+	def mov_G_cost(LFT, node):
+		Gval =0
+		diff = LFT.number - node.number
+
+		if diff in (N, S, E, W):
+			Gval = LFT.G+10
+		elif diff in (NW, NE, SW, SE):
+			Gval = LFT.G+14
+
+		return Gval
+
+
+
 	def loop():
 
 		LFT = get_LFT()
@@ -90,7 +103,12 @@ def a_star(gameDisplay,Hero):
 				node.parent = LFT
 
 			elif node in open_list:
-				pass
+				calc_G = mov_G_cost(LFT, node)
+				if calc_G < node.G:
+					node.parent = LFT
+					G(node)
+					F(node)
+
 
 		if open_list == [] or Hero.get_tile() in closed_list:
 			return
