@@ -1,7 +1,7 @@
 import pygame
 
 
-def text_display(gameDisplay,text,x,y,size=12,color=(255,255,255),font='monospace'):
+def text_display(gameDisplay,text,x,y,size=10,color=(255,255,255),font='monospace'):
 
 		try:
 			text = str(text)

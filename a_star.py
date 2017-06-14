@@ -164,7 +164,7 @@ def a_star(gameDisplay,Hero):
 		half = Tile.width/2
 
 		for tile in return_tiles:
-			pygame.draw.circle(gameDisplay,[10,250,50],[tile.x+half,tile.y+half],half/2)
+			pygame.draw.circle(gameDisplay,[10,250,50],[tile.x+half,tile.y+half],half/4)
 			
 
 
